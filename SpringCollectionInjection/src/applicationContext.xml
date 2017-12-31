@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+   http://www.springframework.org/schema/beans     
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context 
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="collectionInfo" class="com.spring.info.CollectionInfo">
+
+		<property name="studentNameList">
+			<list>
+				<value>Keyur</value>
+				<value>Denish</value>
+				<value>Vinit</value>
+				<value>Rupesh</value>
+				<value>Jigish</value>
+			</list>
+		</property>
+
+
+		<property name="citiesSet">
+			<set>
+				<value>Surat</value>
+				<value>Pune</value>
+				<value>Navsari</value>
+				<value>Bardoli</value>
+				<value>Vidhyanagar</value>
+			</set>
+		</property>
+
+		<property name="stuList">
+			<list>
+				<ref bean="student1" />
+				<ref bean="student2" />
+				<ref bean="student3" />
+			</list>
+
+		</property>
+
+		<property name="stuIdNameMap">
+			<map>
+				<entry key="27" value="Keyur"></entry>
+				<entry key="26" value="Denish"></entry>
+				<entry key="44" value="Vinit"></entry>
+				<entry key="32" value="Jigish"></entry>
+			</map>
+		</property>
+
+		<property name="stuAddrMap">
+			<map>
+				<entry key-ref="student1" value-ref="address1"></entry>
+				<entry key-ref="student2" value-ref="address2"></entry>
+				<entry key-ref="student3" value-ref="address3"></entry>
+			</map>
+		</property>
+
+		<property name="stateCapProps">
+			<props>
+				<prop key="Maharashtra">Mumbai</prop>
+				<prop key="Gujarat">Gandhinagar</prop>
+				<prop key="Panjab">Chandigadh</prop>
+				<prop key="Rajashthan">Jaipur</prop>
+			</props>
+		</property>
+
+		<property name="cities">
+			<!-- <set>
+				<value>Mumbai</value>
+				<value>Pune</value>
+				<value>Delhi</value>
+				<value>Mumbai</value>
+			</set> -->
+
+			<list>
+				<value>Mumbai</value>
+				<value>Pune</value>
+				<value>Delhi</value>
+				<value>Surat</value>
+			</list>
+
+			<!-- <array>
+				<value>Mumbai</value>
+				<value>Pune</value>
+				<value>Delhi</value>
+				<value>Mumbai</value>
+			</array> -->
+			
+		</property>
+	</bean>
+
+	<bean id="student1" class="com.spring.model.Student" lazy-init="false">
+		<property name="studentId" value="27"></property>
+		<property name="studentName" value="Keyur"></property>
+		<property name="phone" value="73870029671"></property>
+	</bean>
+
+	<bean id="student2" class="com.spring.model.Student" lazy-init="false">
+		<property name="studentId" value="26"></property>
+		<property name="studentName" value="Denish"></property>
+		<property name="phone" value="9825216383"></property>
+	</bean>
+
+	<bean id="student3" class="com.spring.model.Student" lazy-init="false">
+		<property name="studentId" value="44"></property>
+		<property name="studentName" value="Vinit"></property>
+		<property name="phone" value="9879534778"></property>
+	</bean>
+
+	<bean id="address1" class="com.spring.model.Address">
+		<property name="addressId" value="11"></property>
+		<property name="city" value="Pune"></property>
+		<property name="street" value="Alcove Society"></property>
+		<property name="zipCode" value="411027"></property>
+	</bean>
+
+	<bean id="address2" class="com.spring.model.Address">
+		<property name="addressId" value="21"></property>
+		<property name="city" value="Surat"></property>
+		<property name="street" value="Patel Street"></property>
+		<property name="zipCode" value="396436"></property>
+	</bean>
+
+	<bean id="address3" class="com.spring.model.Address">
+		<property name="addressId" value="31"></property>
+		<property name="city" value="Navsari"></property>
+		<property name="street" value="Shah Street"></property>
+		<property name="zipCode" value="396445"></property>
+	</bean>
+</beans>
