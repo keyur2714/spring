@@ -1,0 +1,6 @@
+<aspectj>
+    <aspects>
+        <aspect name="com.test.aspects.BasicAspect"/>
+        <aspect name="com.test.aspects.BasicAroundAspect"/>        
+    </aspects>
+</aspectj>
